@@ -1,23 +1,19 @@
-nav {
-  overflow: hidden;
-  /* nav태그 아래의 자식들을 수평정렬하기 위한 설정 */
-  /* border-top: 2px solid grey; */
-}
-
-nav > div {
-  text-align: left;
-  float: left;
-  width: 50%;
-
-  height: 45px;
-  line-height: 45px;
-}
-
 .wrapper {
   position: fixed;
-  /* bottom: 0; */
   left: 0;
   right: 0;
-  width: 100px;
-  height: 100px;
+  top: 0;
+  height: 200px;
+}
+
+nav {
+  overflow: hidden;
+}
+
+.nav-link {
+  float: left;
+  width: 5%;
+  text-align: left;
+  height: 20px;
+  line-height: 20px;
 }
