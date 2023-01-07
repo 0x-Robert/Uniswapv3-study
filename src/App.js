@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import swap from "./pages/swap";
+import nft from "./pages/nft";
+import token from "./pages/token";
+import pools from "./pages/pools";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/swap" component={swap} />
+        <Route path="/token" component={token} />
+        <Route path="/nft" component={nft} />
+        <Route path="/pools" component={pools} />
+      </Routes>
     </div>
   );
 }
