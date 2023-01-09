@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+// Font Awesome을 리액트 컴포넌트 형태로 사용
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// 사용할 파일 정의
+
+import { FaSearch } from "react-icons/fa";
+
+import {
+  famagnifyingglass,
+  faHeart,
+  faCompass,
+  faSquarePlus,
+  faPaperPlane,
+  faHouse,
+} from "@fortawesome/free-solid-svg-icons";
 
 const horizontalCenter = css`
   position: absolute;
@@ -10,11 +24,12 @@ const horizontalCenter = css`
 
 const Container = styled.div`
   position: relative;
-  width: 100%;
-  border-bottom: 2px solid #0bde8b;
+  width: 20%;
+
   background-color: #fff;
-  padding: 20px 60px;
+  padding: 30px 30px;
   box-sizing: border-box;
+  margin: 0 auto;
 `;
 
 //Link태그의 스타일을 입히는거임(페이지이동하는 버튼)
@@ -33,9 +48,10 @@ const ArrowIcon = styled(Link)`
   background-repeat: no-repeat;
 `;
 
+//  background-image: url(https://s.pstatic.net/static/www/m/uit/2020/sp_search.623c21.png);
 const SearchIcon = styled.span`
   ${horizontalCenter}
-  right: 18px;
+  left: 1px;
   width: 24px;
   height: 24px;
   background-position: -356px -260px;
@@ -43,14 +59,13 @@ const SearchIcon = styled.span`
   overflow: hidden;
   color: transparent;
   vertical-align: middle;
-  background-image: url(https://s.pstatic.net/static/www/m/uit/2020/sp_search.623c21.png);
+
   background-size: 467px 442px;
   background-repeat: no-repeat;
 `;
 
 //글자를 입력하면 RemoveIcon이 나오게 되고 누르면 input의 value값이 사라집니다
 const RemoveIcon = styled.span`
-  ${horizontalCenter}
   right: 0px;
   width: 20px;
   height: 20px;
@@ -69,7 +84,7 @@ const InputContainer = styled.div`
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 80%;
   background-color: #fff;
   font-weight: 700;
   font-size: 20px;
@@ -78,7 +93,8 @@ const Input = styled.input`
   ${({ active }) =>
     active &&
     `
-    padding-right: 25px; 
+    padding-right: 10px; 
+    padding-left: 10px; 
   `}
 `;
 
@@ -116,19 +132,23 @@ function SearchBar({ onAddKeyword }) {
 
   return (
     <Container>
-      <ArrowIcon to="/" />
-      <InputContainer>
-        <Input
-          placeholder="검색어를 입력해주세요"
-          active={hasKeyword}
-          value={keyword}
-          onChange={handleKeyword}
-          onKeyDown={handleEnter}
-        />
+      {/* <ArrowIcon to="/" /> */}
+      {/* <SearchIcon to="/" /> */}
 
-        {keyword && <RemoveIcon onClick={handleClearKeyword} />}
-      </InputContainer>
-      <SearchIcon />
+      {/* <SearchIcon /> */}
+      {/* <InputContainer> */}
+      <FaSearch className="fa-search" />
+      <Input
+        placeholder="토큰 및 NFT 컬렉션 검색"
+        active={hasKeyword}
+        value={keyword}
+        onChange={handleKeyword}
+        onKeyDown={handleEnter}
+      />
+
+      {keyword && <RemoveIcon onClick={handleClearKeyword} />}
+      {/* </InputContainer> */}
+      {/* <SearchIcon /> */}
     </Container>
   );
 }
