@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import swap from "./pages/swap";
-import nft from "./pages/nft";
-import token from "./pages/token";
-import pools from "./pages/pools";
+import swap from "./pages/Swap";
+import nft from "./pages/Nfts";
+import token from "./pages/Token";
+import pools from "./pages/Pools";
+import SearchPage from "./pages/SearchPage";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/nft" component={nft} />
         <Route path="/pools" component={pools} />
       </Routes>
+      <SearchPage />
     </div>
   );
 }
