@@ -12,8 +12,6 @@ const horizontalCenter = css`
 const Container = styled.div`
   position: relative;
   width: 20%;
-
-  background-color: #fff;
   padding: 30px 30px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -39,15 +37,15 @@ const ArrowIcon = styled(Link)`
 const SearchIcon = styled.span`
   ${horizontalCenter}
   left: 1px;
-  width: 24px;
-  height: 24px;
+  width: 5px;
+  height: 5px;
   background-position: -356px -260px;
   display: inline-block;
   overflow: hidden;
   color: transparent;
   vertical-align: middle;
 
-  background-size: 467px 442px;
+  background-size: 200px 200px;
   background-repeat: no-repeat;
 `;
 
@@ -72,17 +70,17 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
   width: 80%;
-  background-color: #fff;
+
   font-weight: 700;
   font-size: 20px;
   box-sizing: border-box;
-
+  color: transparent;
   ${({ active }) =>
     active &&
     `
     padding-right: 10px; 
     padding-left: 10px; 
-  `}
+  `};
 `;
 
 function SearchBar({ onAddKeyword }) {
@@ -131,6 +129,7 @@ function SearchBar({ onAddKeyword }) {
 
         {keyword && <RemoveIcon onClick={handleClearKeyword} />}
       </InputContainer>
+      {/* <SearchIcon /> */}
     </Container>
   );
 }
