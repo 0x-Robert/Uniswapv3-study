@@ -1,20 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-// Font Awesome을 리액트 컴포넌트 형태로 사용
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// 사용할 파일 정의
-
 import { FaSearch } from "react-icons/fa";
-
-import {
-  famagnifyingglass,
-  faHeart,
-  faCompass,
-  faSquarePlus,
-  faPaperPlane,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
 
 const horizontalCenter = css`
   position: absolute;
@@ -132,23 +119,18 @@ function SearchBar({ onAddKeyword }) {
 
   return (
     <Container>
-      {/* <ArrowIcon to="/" /> */}
-      {/* <SearchIcon to="/" /> */}
+      <InputContainer>
+        <FaSearch className="fa-search" />
+        <Input
+          placeholder="토큰 및 NFT 컬렉션 검색"
+          active={hasKeyword}
+          value={keyword}
+          onChange={handleKeyword}
+          onKeyDown={handleEnter}
+        />
 
-      {/* <SearchIcon /> */}
-      {/* <InputContainer> */}
-      <FaSearch className="fa-search" />
-      <Input
-        placeholder="토큰 및 NFT 컬렉션 검색"
-        active={hasKeyword}
-        value={keyword}
-        onChange={handleKeyword}
-        onKeyDown={handleEnter}
-      />
-
-      {keyword && <RemoveIcon onClick={handleClearKeyword} />}
-      {/* </InputContainer> */}
-      {/* <SearchIcon /> */}
+        {keyword && <RemoveIcon onClick={handleClearKeyword} />}
+      </InputContainer>
     </Container>
   );
 }
