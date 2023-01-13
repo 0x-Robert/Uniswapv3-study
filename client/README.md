@@ -14,3 +14,5 @@
   npm i @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
   npm i @fortawesome/react-fontawesome
   npm install react-icons --save
+  yarn add node-sass
+  yarn add classnames

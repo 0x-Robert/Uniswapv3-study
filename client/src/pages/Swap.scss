@@ -1,0 +1,10 @@
+.Swap {
+  width: 512px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 13px solid white;
+  padding: 1rem;
+  .buttons + .buttons {
+    margin-top: 1rem;
+  }
+}
