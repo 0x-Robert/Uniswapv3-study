@@ -40,7 +40,7 @@ padding-right: 10px;
 position: relative;
 margin 0 auto;
 margin-top: -300px;
-margin-bottom: 32px;
+margin-bottom: -50px;
 `
 
 
@@ -53,7 +53,7 @@ padding-right: 10px;
 position: relative;
 margin 0 auto;
 margin-top: -100px;
-margin-bottom: 32px;
+margin-bottom: 62px;
 `
 
 
@@ -67,8 +67,8 @@ function Swap({ children }) {
   return (
     <div>
       <SwapTemplate>{children}</SwapTemplate>
-      <InputStyle><Input/></InputStyle>
-      <InputStyle2><Input/></InputStyle2>
+      <InputStyle><Input value={value} /></InputStyle>
+      <InputStyle2><Input value={value}/></InputStyle2>
 
     </div>
   );
