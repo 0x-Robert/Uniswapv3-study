@@ -67,8 +67,12 @@ function Swap({ children }) {
   return (
     <div>
       <SwapTemplate>{children}</SwapTemplate>
-      <InputStyle><Input value={value} /></InputStyle>
-      <InputStyle2><Input value={value}/></InputStyle2>
+      <InputStyle><Input value={value} onChange={(e)=>{
+        setValue(e.target.value)
+      }} /></InputStyle>
+       <InputStyle2><Input value={value} onChange={(e)=>{
+        setValue(e.target.value)
+      }} /></InputStyle2>
 
     </div>
   );
